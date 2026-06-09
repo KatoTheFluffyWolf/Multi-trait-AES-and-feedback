@@ -22,7 +22,7 @@ const suggestionList = document.getElementById("suggestionList");
 const API_URL = "https://katothesoftwolf-aes-api.hf.space/predict";
 
 // Set to true if you want to test the frontend without your backend.
-const DEMO_MODE = true;
+const DEMO_MODE = false;
 
 essayInput.addEventListener("input", updateWordCount);
 
