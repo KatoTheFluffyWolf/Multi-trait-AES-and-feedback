@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IELTS Essay Scoring Assistant</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="app-header">
+      <div>
+        <h1>IELTS Writing Scoring Assistant</h1>
+        <p>Prompt-aware and rubric-aware essay evaluation for IELTS Writing Task 2.</p>
+      </div>
+
+      <span class="badge">AES Demo</span>
+    </header>
+
+    <main class="main-layout">
+      <!-- Input Section -->
+      <section class="card input-card">
+        <h2>Essay Input</h2>
+        <p class="section-description">
+          Paste the IELTS Task 2 prompt and your essay below.
+        </p>
+
+        <form id="essayForm">
+          <label for="promptInput">Essay Prompt</label>
+          <input
+            type="text"
+            id="promptInput"
+            placeholder="Example: Some people believe that technology has made life more complex..."
+            required
+          />
+
+          <label for="essayInput">Essay</label>
+          <textarea
+            id="essayInput"
+            placeholder="Write or paste your essay here..."
+            required
+          ></textarea>
+
+          <div class="helper-row">
+            <span id="wordCount">Word count: 0</span>
+            <span id="wordWarning">Recommended: 250+ words</span>
+          </div>
+
+          <button type="submit" id="submitBtn">
+            Analyze Essay
+          </button>
+        </form>
+
+        <p class="disclaimer">
+          This tool provides AI-generated scoring support and should not be treated as an official IELTS score.
+        </p>
+      </section>
+
+      <!-- Result Section -->
+      <section class="card result-card">
+        <div class="result-header">
+          <div>
+            <h2>Score & Feedback</h2>
+            <p class="section-description">
+              Your predicted band score and writing feedback will appear here.
+            </p>
+          </div>
+        </div>
+
+        <div id="emptyState" class="empty-state">
+          <div class="empty-icon">✍️</div>
+          <h3>No essay analyzed yet</h3>
+          <p>Submit an essay to view the predicted band score and rubric-based feedback.</p>
+        </div>
+
+        <div id="loadingState" class="loading-state hidden">
+          <div class="loader"></div>
+          <p>Analyzing essay with rubric-aware scoring...</p>
+        </div>
+
+        <div id="resultContent" class="hidden">
+          <div class="overall-score-card">
+            <span>Overall Band</span>
+            <strong id="overallScore">-</strong>
+          </div>
+
+          <div class="trait-grid">
+            <div class="trait-card">
+              <span>Task Response</span>
+              <strong id="taskResponseScore">-</strong>
+            </div>
+
+            <div class="trait-card">
+              <span>Coherence & Cohesion</span>
+              <strong id="coherenceScore">-</strong>
+            </div>
+
+            <div class="trait-card">
+              <span>Lexical Resource</span>
+              <strong id="lexicalScore">-</strong>
+            </div>
+
+            <div class="trait-card">
+              <span>Grammar</span>
+              <strong id="grammarScore">-</strong>
+            </div>
+          </div>
+
+          <div class="feedback-box">
+            <h3>Feedback</h3>
+            <p id="feedbackText">
+              Feedback will appear here.
+            </p>
+          </div>
+
+          <div class="suggestion-box">
+            <h3>Suggested Improvements</h3>
+            <ul id="suggestionList"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
