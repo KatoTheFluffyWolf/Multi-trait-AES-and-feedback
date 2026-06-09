@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IELTS Essay Scoring Assistant</title>
+  <title>DREsS Essay Scoring Assistant</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="page-wrapper">
     <header class="app-header">
       <div>
-        <h1>IELTS Writing Scoring Assistant</h1>
-        <p>Prompt-aware and rubric-aware essay evaluation for IELTS Writing Task 2.</p>
+        <h1>DREsS Essay Scoring Assistant</h1>
+        <p>Prompt-aware multi-trait essay scoring using Content, Organization, and Language.</p>
       </div>
 
       <span class="badge">AES Demo</span>
@@ -22,7 +22,7 @@
       <section class="card input-card">
         <h2>Essay Input</h2>
         <p class="section-description">
-          Paste the IELTS Task 2 prompt and your essay below.
+          Paste the essay prompt and the student essay below.
         </p>
 
         <form id="essayForm">
@@ -30,20 +30,20 @@
           <input
             type="text"
             id="promptInput"
-            placeholder="Example: Some people believe that technology has made life more complex..."
+            placeholder="Enter the writing prompt here..."
             required
           />
 
           <label for="essayInput">Essay</label>
           <textarea
             id="essayInput"
-            placeholder="Write or paste your essay here..."
+            placeholder="Write or paste the essay here..."
             required
           ></textarea>
 
           <div class="helper-row">
             <span id="wordCount">Word count: 0</span>
-            <span id="wordWarning">Recommended: 250+ words</span>
+            <span id="wordWarning">DREsS traits: Content, Organization, Language</span>
           </div>
 
           <button type="submit" id="submitBtn">
@@ -52,7 +52,7 @@
         </form>
 
         <p class="disclaimer">
-          This tool provides AI-generated scoring support and should not be treated as an official IELTS score.
+          This tool provides AI-generated scoring support and should not be treated as a final human assessment.
         </p>
       </section>
 
@@ -62,7 +62,7 @@
           <div>
             <h2>Score & Feedback</h2>
             <p class="section-description">
-              Your predicted band score and writing feedback will appear here.
+              Predicted DREsS trait scores and essay feedback will appear here.
             </p>
           </div>
         </div>
@@ -70,39 +70,37 @@
         <div id="emptyState" class="empty-state">
           <div class="empty-icon">✍️</div>
           <h3>No essay analyzed yet</h3>
-          <p>Submit an essay to view the predicted band score and rubric-based feedback.</p>
+          <p>Submit an essay to view the predicted Content, Organization, and Language scores.</p>
         </div>
 
         <div id="loadingState" class="loading-state hidden">
           <div class="loader"></div>
-          <p>Analyzing essay with rubric-aware scoring...</p>
+          <p>Analyzing essay with prompt-aware multi-trait scoring...</p>
         </div>
 
         <div id="resultContent" class="hidden">
           <div class="overall-score-card">
-            <span>Overall Band</span>
-            <strong id="overallScore">-</strong>
+            <div>
+              <span>Total Score</span>
+              <p class="score-note">Sum of Content, Organization, and Language</p>
+            </div>
+            <strong id="totalScore">-</strong>
           </div>
 
           <div class="trait-grid">
             <div class="trait-card">
-              <span>Task Response</span>
-              <strong id="taskResponseScore">-</strong>
+              <span>Content</span>
+              <strong id="contentScore">-</strong>
             </div>
 
             <div class="trait-card">
-              <span>Coherence & Cohesion</span>
-              <strong id="coherenceScore">-</strong>
+              <span>Organization</span>
+              <strong id="organizationScore">-</strong>
             </div>
 
             <div class="trait-card">
-              <span>Lexical Resource</span>
-              <strong id="lexicalScore">-</strong>
-            </div>
-
-            <div class="trait-card">
-              <span>Grammar</span>
-              <strong id="grammarScore">-</strong>
+              <span>Language</span>
+              <strong id="languageScore">-</strong>
             </div>
           </div>
 
