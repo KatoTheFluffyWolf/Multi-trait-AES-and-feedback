@@ -109,25 +109,27 @@ function showResult(data) {
   emptyState.classList.add("hidden");
   resultContent.classList.remove("hidden");
 
-  const content = Number(data.trait_scores.content);
-  const organization = Number(data.trait_scores.organization);
-  const language = Number(data.trait_scores.language);
-
-  const total =
-    data.total_score !== undefined && data.total_score !== null
-      ? Number(data.total_score)
-      : content + organization + language;
+  const content = Number(data.content);
+  const organization = Number(data.organization);
+  const language = Number(data.language);
+  const total = Number(data.total);
 
   totalScore.textContent = formatScore(total);
   contentScore.textContent = formatScore(content);
   organizationScore.textContent = formatScore(organization);
   languageScore.textContent = formatScore(language);
 
-  feedbackText.textContent = data.feedback;
+  feedbackText.textContent = data.feedback || data.note || "Scores generated successfully.";
 
   suggestionList.innerHTML = "";
 
-  data.suggestions.forEach(function (suggestion) {
+  const suggestions = [
+    "Review the Content score to understand how well the essay addresses and develops the prompt.",
+    "Review the Organization score to understand the structure, paragraphing, and logical flow.",
+    "Review the Language score to understand grammar, vocabulary, sentence control, and clarity."
+  ];
+
+  suggestions.forEach(function (suggestion) {
     const li = document.createElement("li");
     li.textContent = suggestion;
     suggestionList.appendChild(li);
