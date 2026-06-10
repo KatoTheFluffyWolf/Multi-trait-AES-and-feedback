@@ -6,6 +6,7 @@
   <title>DREsS Essay Scoring Assistant</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <div class="page-wrapper">
     <header class="app-header">
@@ -21,8 +22,9 @@
       <!-- Input Section -->
       <section class="card input-card">
         <h2>Essay Input</h2>
+
         <p class="section-description">
-          Paste the essay prompt and the student essay below.
+          Paste the full essay prompt and the student essay below.
         </p>
 
         <form id="essayForm">
@@ -31,6 +33,7 @@
             id="promptInput"
             class="prompt-textarea"
             placeholder="Enter the full essay prompt here..."
+            required
           ></textarea>
 
           <label for="essayInput">Essay</label>
@@ -42,6 +45,7 @@
 
           <div class="helper-row">
             <span id="wordCount">Word count: 0</span>
+            <span id="wordWarning">DREsS traits: Content, Organization, Language</span>
           </div>
 
           <button type="submit" id="submitBtn">
@@ -82,6 +86,7 @@
               <span>Total Score</span>
               <p class="score-note">Sum of Content, Organization, and Language</p>
             </div>
+
             <strong id="totalScore">-</strong>
           </div>
 
@@ -104,9 +109,7 @@
 
           <div class="feedback-box">
             <h3>Feedback</h3>
-            <p id="feedbackText">
-              Feedback will appear here.
-            </p>
+            <p id="feedbackText">Feedback will appear here.</p>
           </div>
 
           <div class="suggestion-box">
