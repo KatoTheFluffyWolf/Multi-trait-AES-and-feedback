@@ -52,12 +52,9 @@ body {
 }
 
 .logo {
-  width: 92px;
-  height: 40px;
+  width: 276px;
+  height: 120px;
   object-fit: contain;
-  border-radius: 999px;
-  background: #e8edff;
-  border: 1px dashed var(--primary);
   padding: 6px 14px;
   flex-shrink: 0;
 }
