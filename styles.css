@@ -26,7 +26,7 @@ body {
 }
 
 .page-wrapper {
-  width: min(1500px, 94%);
+  width: min(1200px, 94%);
   margin: 0 auto;
   padding: 40px 0;
 }
