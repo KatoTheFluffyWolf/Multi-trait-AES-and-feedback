@@ -313,6 +313,35 @@ button:disabled {
   margin-bottom: 10px;
   line-height: 1.5;
 }
+.description-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.description-row .section-description {
+  margin: 0;
+}
+
+.add-image-button {
+  width: auto;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #e8edff;
+  color: var(--primary);
+  border: 1px solid #cfd8ff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.add-image-button:hover {
+  background: #dce4ff;
+  color: var(--primary-dark);
+  transform: translateY(-1px);
+}
 
 @media (max-width: 900px) {
   .page-wrapper {
