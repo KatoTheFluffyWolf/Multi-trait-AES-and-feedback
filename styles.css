@@ -26,7 +26,7 @@ body {
 }
 
 .page-wrapper {
-  width: min(1200px, 94%);
+  width: min(1000px, 94%);
   margin: 0 auto;
   padding: 40px 0;
 }
@@ -59,9 +59,6 @@ body {
   flex-shrink: 0;
 }
 
-/* Main change:
-   One-column layout, so the essay panel is full-width
-   and the score/feedback panel appears below it. */
 .main-layout {
   display: grid;
   grid-template-columns: 1fr;
@@ -119,7 +116,7 @@ textarea:focus {
 }
 
 .prompt-textarea {
-  min-height: 130px;
+  min-height: 100px;
   margin-bottom: 20px;
   resize: vertical;
   line-height: 1.6;
