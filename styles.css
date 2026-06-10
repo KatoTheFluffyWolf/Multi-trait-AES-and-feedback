@@ -26,7 +26,7 @@ body {
 }
 
 .page-wrapper {
-  width: min(1200px, 92%);
+  width: min(1500px, 94%);
   margin: 0 auto;
   padding: 40px 0;
 }
@@ -60,9 +60,12 @@ body {
   white-space: nowrap;
 }
 
+/* Main change:
+   One-column layout, so the essay panel is full-width
+   and the score/feedback panel appears below it. */
 .main-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 26px;
   align-items: start;
 }
@@ -116,14 +119,19 @@ textarea:focus {
   background: #ffffff;
 }
 
-input {
+.prompt-textarea {
+  min-height: 130px;
   margin-bottom: 20px;
-}
-
-textarea {
-  min-height: 330px;
   resize: vertical;
   line-height: 1.6;
+  overflow-y: auto;
+}
+
+#essayInput {
+  min-height: 540px;
+  resize: vertical;
+  line-height: 1.6;
+  overflow-y: auto;
 }
 
 .helper-row {
@@ -134,6 +142,7 @@ textarea {
   margin: 12px 0 22px;
   color: var(--text-muted);
   font-size: 0.92rem;
+  flex-wrap: wrap;
 }
 
 #wordWarning.warning {
@@ -179,7 +188,7 @@ button:disabled {
 
 .empty-state,
 .loading-state {
-  min-height: 460px;
+  min-height: 260px;
   border: 1px dashed var(--border);
   border-radius: 18px;
   display: flex;
@@ -230,6 +239,7 @@ button:disabled {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 18px;
 }
 
 .overall-score-card span {
@@ -241,9 +251,15 @@ button:disabled {
   font-size: 3rem;
 }
 
+.score-note {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
 .trait-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 14px;
   margin-bottom: 22px;
 }
@@ -283,6 +299,7 @@ button:disabled {
 .feedback-box p {
   line-height: 1.65;
   color: #2f3748;
+  white-space: pre-wrap;
 }
 
 .suggestion-box ul {
@@ -296,8 +313,9 @@ button:disabled {
 }
 
 @media (max-width: 900px) {
-  .main-layout {
-    grid-template-columns: 1fr;
+  .page-wrapper {
+    width: min(100% - 28px, 900px);
+    padding: 24px 0;
   }
 
   .app-header {
@@ -308,9 +326,13 @@ button:disabled {
   .trait-grid {
     grid-template-columns: 1fr;
   }
-  .score-note {
-  margin: 6px 0 0;
-  font-size: 0.85rem;
-  opacity: 0.85;
-}
+
+  #essayInput {
+    min-height: 420px;
+  }
+
+  .overall-score-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
