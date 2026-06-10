@@ -15,7 +15,11 @@
         <p>Prompt-aware multi-trait essay scoring using Content, Organization, and Language.</p>
       </div>
 
-      <span class="badge">AES Demo</span>
+      <img
+        src="assets/giaviet-logo.png"
+        alt="Logor"
+        class="logo"
+      />
     </header>
 
     <main class="main-layout">
@@ -24,15 +28,15 @@
         <h2>Essay Input</h2>
 
         <p class="section-description">
-          Paste the full essay prompt and the student essay below.
+          Enter the question and write your essay below. If the question contains an image, you can include it with the "Add Image" button.
         </p>
 
         <form id="essayForm">
-          <label for="promptInput">Essay Prompt</label>
+          <label for="promptInput">Question</label>
           <textarea
             id="promptInput"
             class="prompt-textarea"
-            placeholder="Enter the full essay prompt here..."
+            placeholder="Enter the question here..."
             required
           ></textarea>
 
@@ -45,7 +49,6 @@
 
           <div class="helper-row">
             <span id="wordCount">Word count: 0</span>
-            <span id="wordWarning">DREsS traits: Content, Organization, Language</span>
           </div>
 
           <button type="submit" id="submitBtn">
