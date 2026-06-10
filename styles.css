@@ -51,13 +51,15 @@ body {
   font-size: 1rem;
 }
 
-.badge {
-  padding: 10px 16px;
-  background: #e8edff;
-  color: var(--primary);
+.logo {
+  width: 92px;
+  height: 40px;
+  object-fit: contain;
   border-radius: 999px;
-  font-weight: 700;
-  white-space: nowrap;
+  background: #e8edff;
+  border: 1px dashed var(--primary);
+  padding: 6px 14px;
+  flex-shrink: 0;
 }
 
 /* Main change:
